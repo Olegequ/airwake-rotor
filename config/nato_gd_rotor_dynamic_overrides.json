@@ -1,0 +1,58 @@
+{
+  "schema_version": "nato-gd-rotor-dynamic-overrides-v1",
+  "scope": "Exploratory cross-configuration comparison; replace engineering estimates with identified aircraft data before certification-level interpretation.",
+  "inertia_convention": "principal body axes; products of inertia set explicitly to zero",
+  "Izz_estimation_rule": "Izz_kgm2 = Ixx_kgm2 + Iyy_kgm2 (perpendicular-axis engineering approximation)",
+  "damping_conversion": "legacy small-disturbance time constants converted to dimensional damping: cz=m/tau_z, cphi=Ixx/tau_phi, ctheta=Iyy/tau_theta",
+  "rotors": {
+    "AW101": {
+      "Izz_kgm2": 155000.0,
+      "Ixy_kgm2": 0.0,
+      "Ixz_kgm2": 0.0,
+      "Iyz_kgm2": 0.0,
+      "parameter_status": "engineering_estimate"
+    },
+    "MH-60R": {
+      "Izz_kgm2": 110000.0,
+      "Ixy_kgm2": 0.0,
+      "Ixz_kgm2": 0.0,
+      "Iyz_kgm2": 0.0,
+      "parameter_status": "engineering_estimate"
+    },
+    "NH90-NFH": {
+      "Izz_kgm2": 125000.0,
+      "Ixy_kgm2": 0.0,
+      "Ixz_kgm2": 0.0,
+      "Iyz_kgm2": 0.0,
+      "parameter_status": "engineering_estimate"
+    },
+    "AS565-MBe": {
+      "Izz_kgm2": 28000.0,
+      "Ixy_kgm2": 0.0,
+      "Ixz_kgm2": 0.0,
+      "Iyz_kgm2": 0.0,
+      "parameter_status": "engineering_estimate"
+    },
+    "MQ-8C": {
+      "Izz_kgm2": 12500.0,
+      "Ixy_kgm2": 0.0,
+      "Ixz_kgm2": 0.0,
+      "Iyz_kgm2": 0.0,
+      "parameter_status": "engineering_estimate"
+    },
+    "VSR700": {
+      "Izz_kgm2": 1100.0,
+      "Ixy_kgm2": 0.0,
+      "Ixz_kgm2": 0.0,
+      "Iyz_kgm2": 0.0,
+      "parameter_status": "engineering_estimate"
+    },
+    "Camcopter-S100": {
+      "Izz_kgm2": 65.0,
+      "Ixy_kgm2": 0.0,
+      "Ixz_kgm2": 0.0,
+      "Iyz_kgm2": 0.0,
+      "parameter_status": "engineering_estimate"
+    }
+  }
+}

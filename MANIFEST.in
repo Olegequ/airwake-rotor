@@ -1,0 +1,12 @@
+include README.md README.zh-CN.md LICENSE THIRD_PARTY_NOTICES.md
+include CONTRIBUTING.md SECURITY.md CHANGELOG.md
+include CITATION.cff
+include rotor_config.json
+recursive-include LICENSES *.txt
+recursive-include config *.json
+recursive-include docs *.md *.json *.png
+recursive-include tests *.py
+recursive-include scripts *.py
+recursive-include examples *.py
+include data/README.md
+global-exclude __pycache__ *.py[cod]

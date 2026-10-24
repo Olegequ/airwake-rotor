@@ -1,0 +1,140 @@
+{
+  "author": "Olegequ",
+  "project": "airwake-rotor",
+  "modules": [
+    {
+      "source": "tool/rvmd_core.py",
+      "destination": "src/airwake_rotor/rvmd_core.py",
+      "original_sha256": "35a2775906ff80df6b6e8dfe2c7f109880e58a9d74e7d12716a1ce7bd6c46eee"
+    },
+    {
+      "source": "tool/nato_gd_3d_io.py",
+      "destination": "src/airwake_rotor/nato_gd_3d_io.py",
+      "original_sha256": "c9820dd3bee244ff4824b3159e7cff4e618da0f7f50fae2a1f5175aebe9c2aa3"
+    },
+    {
+      "source": "tool/nato_gd_rvmd_adapter.py",
+      "destination": "src/airwake_rotor/nato_gd_rvmd_adapter.py",
+      "original_sha256": "90f0be217870eb0fed66c1325754ce36042165743e4bfd16f04b5268b068b43b"
+    },
+    {
+      "source": "tool/rvmd_3d_flow.py",
+      "destination": "src/airwake_rotor/rvmd_3d_flow.py",
+      "original_sha256": "fcc61d275de2e23811e1cabf86ebe7e9f038320d66b634b689a8c4041b4ab114"
+    },
+    {
+      "source": "tool/dmd_3d_flow.py",
+      "destination": "src/airwake_rotor/dmd_3d_flow.py",
+      "original_sha256": "84eaeb6c2d9718bcc461d13f68c72986be5df281683742a4e9f1a8312e9c4941"
+    },
+    {
+      "source": "tool/nato_gd_dmd_3d.py",
+      "destination": "src/airwake_rotor/nato_gd_dmd_3d.py",
+      "original_sha256": "2bbfc35e4c2affab55aa1944e883a8f553b4258b51ad1b31d8e98665bbf115f9"
+    },
+    {
+      "source": "tool/nato_gd_dmd_coupling_pipeline.py",
+      "destination": "src/airwake_rotor/nato_gd_dmd_coupling_pipeline.py",
+      "original_sha256": "5519e2e0dd357696a2b7a8e4548a14f3b3720d70a2cc89e8f495b7c8400adb6e"
+    },
+    {
+      "source": "tool/nato_gd_study.py",
+      "destination": "src/airwake_rotor/nato_gd_study.py",
+      "original_sha256": "a0d7ca5d8db49eabec6267e9af4c04421fda0ced20f2542ee548bfb0cc7ff0c0"
+    },
+    {
+      "source": "tool/nonlinear_blade_element.py",
+      "destination": "src/airwake_rotor/nonlinear_blade_element.py",
+      "original_sha256": "4447e39240134fcf540a40eee33a34413ecc93490ddacec626d1e850826c6327"
+    },
+    {
+      "source": "tool/nonlinear_rotorcraft_dynamics.py",
+      "destination": "src/airwake_rotor/nonlinear_rotorcraft_dynamics.py",
+      "original_sha256": "7c20b8fe4b35810f581e9ee6c0347eecc56c639c1125f0d0ea5c31ebbe1d268f"
+    },
+    {
+      "source": "tool/rvmd_nato_coupling_pipeline.py",
+      "destination": "src/airwake_rotor/rvmd_nato_coupling_pipeline.py",
+      "original_sha256": "caafe00e955077b09343889d3614b96df05e8854505a5a83ac43f91b1ab0f20d"
+    },
+    {
+      "source": "tool/select_rvmd_mode_count.py",
+      "destination": "src/airwake_rotor/select_rvmd_mode_count.py",
+      "original_sha256": "e0200c992f98ba5a805b9d73b46f42a9a20437831284218099dbf26ab2a51152"
+    },
+    {
+      "source": "tool/analyze_normalized_modal_sensitivity.py",
+      "destination": "src/airwake_rotor/analyze_normalized_modal_sensitivity.py",
+      "original_sha256": "db4fd81f76ab15503c08caa466fe34a9183a18e77b87494fc74f8250bd67b000"
+    },
+    {
+      "source": "tool/plot_normalized_modal_sensitivity.py",
+      "destination": "src/airwake_rotor/plot_normalized_modal_sensitivity.py",
+      "original_sha256": "8ab10091153ea9a01cef2cf48ae140c4d69b94bf07a7f093dc5faf2dded5a8e7"
+    },
+    {
+      "source": "tool/finalize_time_weighted_statistics.py",
+      "destination": "src/airwake_rotor/finalize_time_weighted_statistics.py",
+      "original_sha256": "b1c8736bf7a13ac3c421d9210edaa85e65a94371c2e1602381dabb80db4f2bda"
+    },
+    {
+      "source": "tool/analyze_modal_deletion_stability.py",
+      "destination": "src/airwake_rotor/analyze_modal_deletion_stability.py",
+      "original_sha256": "131d459cba572755334fba813885f0064c5953af79ab4020e9f35b88518f3629"
+    },
+    {
+      "source": "tool/run_numerical_sensitivity_qa.py",
+      "destination": "src/airwake_rotor/run_numerical_sensitivity_qa.py",
+      "original_sha256": "f2d59b06d4c16feb371a6b3ebe572142cf7aa70dbcc7454742092a65eb3323cc"
+    },
+    {
+      "source": "tool/render_rvmd_deletion_flow_gifs.py",
+      "destination": "src/airwake_rotor/render_rvmd_deletion_flow_gifs.py",
+      "original_sha256": "c9a863039fdcd0dd8faeb456a72de844b8b4684b5ab60b538441da2a9cffbe3f"
+    },
+    {
+      "source": "tool/audit_rvmd_gifs.py",
+      "destination": "src/airwake_rotor/audit_rvmd_gifs.py",
+      "original_sha256": "0be5f25a6ec2fe64b5f191b138e1900c08973bca89f1f2605a8219cb5e9ce5e3"
+    },
+    {
+      "source": "tool/plot_rvmd_3d_results.py",
+      "destination": "src/airwake_rotor/plot_rvmd_3d_results.py",
+      "original_sha256": "a5cae6e08aefa20e1d51328544f77cd6ac6df1741c1fa59eeeb955edbc182e48"
+    },
+    {
+      "source": "tool/final_output_gate.py",
+      "destination": "src/airwake_rotor/final_output_gate.py",
+      "original_sha256": "f1d41c8b4701f41ac5d5c409c02d61706fdce1196cbb419f320227ae9f84c76c"
+    },
+    {
+      "source": "tool/hover_stability_audit.py",
+      "destination": "src/airwake_rotor/hover_stability_audit.py",
+      "original_sha256": "51d356c2287e408d77d7916a0f05cd0a120b2d0cabc90b0f7235c1aaed1f5d72"
+    },
+    {
+      "source": "tool/audit_rvmd_frequency.py",
+      "destination": "src/airwake_rotor/audit_rvmd_frequency.py",
+      "original_sha256": "35618768ff406f07f52a3b2d8ddb4f6c99b4d5dac5a17c0bda5204cea6ef7ff1"
+    },
+    {
+      "source": "tool/validate_rvmd_backend_equivalence.py",
+      "destination": "src/airwake_rotor/validate_rvmd_backend_equivalence.py",
+      "original_sha256": "b37f11d1aab0d6268e53c6fc9a6d978a81f6492bf40cbafd34a64a7464428e5e"
+    }
+  ],
+  "adaptations": [
+    "Package imports",
+    "Author attribution",
+    "Portable documentation and CUDA default",
+    "Author watermark at figure export"
+  ],
+  "excluded": [
+    "CFD data",
+    "Computed results",
+    "Manuscripts",
+    "Patent materials",
+    "Local automation",
+    "One-off figure revision and validation44 scripts"
+  ]
+}

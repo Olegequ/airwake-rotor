@@ -1,0 +1,188 @@
+{
+  "schema_version": "nato-gd-rvmd-3d-v1",
+  "study": {
+    "dataset_name": "NATO-GD",
+    "source_data_dir": "data/cfd",
+    "output_dir": "runs/research",
+    "cache_dir": "runs/research/01_cache",
+    "snapshot_prefix": "流场数据_table_",
+    "first_snapshot_id": 2001,
+    "last_snapshot_id": 4500,
+    "sample_interval_s": 0.0125,
+    "sample_interval_status": "example_only; replace with verified data timing",
+    "absolute_time_start_s": null,
+    "time_coordinate": "relative_to_first_snapshot",
+    "mode_count": 152,
+    "mode_count_status": "example_candidate_only; determine K from your own full-space residual audit",
+    "strouhal_reference_length_m": 13.716,
+    "strouhal_reference_velocity_mps": 20.0
+  },
+  "coordinates": {
+    "world_axes": "right-handed CFD Cartesian coordinates; +z upward",
+    "body_axes": "right-handed; coincident with world axes at zero attitude",
+    "velocity_components": [
+      "u_x",
+      "u_y",
+      "u_z"
+    ],
+    "initial_hub_world_m": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "hub_position_status": "inferred_pending_user_configuration",
+    "rotor_axis_body": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "initial_roll_deg": 0.0,
+    "initial_pitch_deg": 0.0,
+    "out_of_bounds_policy": "hard_fail_no_clip_no_extrapolation"
+  },
+  "flow_model": {
+    "decomposition_fields": [
+      "u",
+      "v",
+      "w"
+    ],
+    "pressure_use": "excluded_from_RVMD_and_density",
+    "air_density_kgpm3": 1.225,
+    "cfd_contains_rotor_wake": false,
+    "mean_definition": "time_mean_at_each_3d_grid_node",
+    "fluctuation_metric": "physical_velocity_L2_with_uniform_cell_volume",
+    "component_scaling": "one_shared_global_velocity_fluctuation_rms"
+  },
+  "rvmd": {
+    "implementation": "Liao_2023_real_RVMD_with_mirror_extension",
+    "mode_count": 152,
+    "mode_count_selection_strategy": "candidate RVMD runs followed by full-space mean-removed residual-energy audit",
+    "candidate_mode_counts": [
+      144,
+      152,
+      160,
+      176,
+      192
+    ],
+    "full_space_energy_target": 0.998,
+    "precompression_energy_target": 0.9998,
+    "alpha_normalized_frequency": 1000.0,
+    "alpha_sensitivity_candidates": [
+      500.0,
+      1000.0,
+      2000.0,
+      5000.0
+    ],
+    "maximum_steps": 30000,
+    "tolerance": 0.005,
+    "compute_backend": "auto",
+    "n_dc": 0,
+    "initial_frequency_max_hz": 6.0,
+    "identification_method": "deterministic_countsketch_then_exact_energy_target_POD",
+    "countsketch_buckets_per_velocity_component": 256,
+    "countsketch_seed": 20260911,
+    "pod_rank": 220,
+    "pod_rank_status": "fallback_only_when_energy_target_selection_is_disabled",
+    "pod_seed": 20260912,
+    "pod_oversampling": 12,
+    "pod_power_iterations": 1,
+    "full_space_recovery": "chunked_least_squares_using_all_grid_nodes",
+    "normal_equation_rcond": 1e-10,
+    "frequency_sort": "ascending",
+    "strouhal_formula": "St=f_Hz*13.716/20"
+  },
+  "rotor_model": {
+    "base_rotor_config": "rotor_config.json",
+    "dynamic_overrides": "config/nato_gd_rotor_dynamic_overrides.json",
+    "radial_elements": 24,
+    "maximum_azimuth_step_deg": 5.0,
+    "blade_element_model": "quasi_steady_nonlinear_BEM",
+    "prandtl_root_tip_loss": true,
+    "dynamic_stall": false,
+    "dynamic_stall_reason": "airfoil-specific static/dynamic polar data are not available",
+    "hub_moment_policy": "force_line_only",
+    "hub_moment_sensitivity_bound": "rigid_root_bound",
+    "flapping_moment_transfer": "prohibited"
+  },
+  "dynamic_inflow": {
+    "model": "near_hover_frozen_coefficient_Pitt_Peters_three_state_disturbance",
+    "state_order": [
+      "delta_lambda_0",
+      "delta_lambda_c",
+      "delta_lambda_s"
+    ],
+    "initialization": "azimuth_mean_NATO_GD_time_mean_fixed_point_seeded_by_physical_hover_momentum_theory",
+    "maximum_delta_lambda_fraction": 0.75,
+    "maximum_delta_mu_z_fraction": 1.0,
+    "uniform_external_axial_flow_correction": true,
+    "invalid_regime_policy": "hard_fail",
+    "reference": "Pitt_and_Peters_1981"
+  },
+  "body_response": {
+    "model": "yaw_constrained_nonlinear_roll_pitch_heave",
+    "integration": "heun_predictor_corrector",
+    "gravity_mps2": 9.80665,
+    "pre_roll_s": 1.0,
+    "analysis_window_start_s": 1.0,
+    "analysis_window_end_s": 11.0,
+    "common_window_required": true,
+    "trim_environment": "azimuth_mean_NATO_GD_time_mean_fixed_body_equilibrium_seeded_by_still_air_momentum_trim",
+    "mean_flow_trim_phase_samples": 72,
+    "deck_mean_compensation": "single_fixed_body_reaction_after_collective_and_three_state_mean_flow_trim_applied_identically_to_all_mode_cases",
+    "controller": "mass_inertia_normalized_PD_hover_hold",
+    "hover_hold_controller": {
+      "enabled": true,
+      "model": "idealized_generalized_force_PD_hover_hold",
+      "parameter_status": "engineering_assumption_due_to_unavailable_aircraft_specific_AFCS_data; mandatory_gain_sensitivity_reported",
+      "heave_natural_frequency_hz": 0.25,
+      "roll_natural_frequency_hz": 0.4,
+      "pitch_natural_frequency_hz": 0.4,
+      "heave_damping_ratio": 0.8,
+      "attitude_damping_ratio": 0.8,
+      "gain_scaling": "mass_and_principal_inertia_scaled_to_common_closed_loop_frequency_and_damping",
+      "actuator_saturation": "not_modelled; validity limited to cases passing declared attitude/heave/domain gates"
+    },
+    "damping_parameter_status": "engineering_estimate_from_legacy_small_disturbance_time_constants",
+    "maximum_abs_attitude_deg": 12.0,
+    "maximum_abs_heave_m": 1.0,
+    "maximum_abs_heave_speed_mps": 5.0
+  },
+  "outputs": {
+    "write_stage_zero_full_RVMD": true,
+    "write_each_selected_mode_high_frequency_deletion": true,
+    "write_all_single_mode_sensitivity_cases": true,
+    "write_all_leave_one_out_sensitivity_cases": true,
+    "normalized_sensitivity_bases": [
+      "actual_response_R",
+      "unit_modal_energy_gain_G"
+    ],
+    "primary_sensitivity_estimator": "leave_one_out",
+    "write_original_CFD_baseline": true,
+    "gif_count_source": "selected_mode_count",
+    "gif_frames_each": 200,
+    "gif_view": "three_orthogonal_3d_slices",
+    "figure_formats": [
+      "svg",
+      "pdf",
+      "tiff",
+      "png"
+    ],
+    "figure_raster_dpi": 600,
+    "write_figure_manual_markdown": true
+  },
+  "production_gate": {
+    "require_confirmed_sample_interval": true,
+    "require_confirmed_hub_world_position": true,
+    "require_all_rotor_points_inside_flow_domain": true,
+    "require_rvmd_convergence_or_explicit_override": true,
+    "require_reconstruction_audit": true,
+    "require_time_step_convergence_check": true,
+    "require_hover_hold_gain_sensitivity": true,
+    "require_complete_all_St_single_and_leave_one_out_sensitivity": true,
+    "require_actual_response_and_unit_energy_gain_frequency_laws": true,
+    "provisional_airframe_parameters_allowed": true,
+    "parameter_status_must_be_reported": true,
+    "require_full_space_fluctuation_energy_fraction": 0.998,
+    "current_run_status": "example_configuration_requires_dataset_timing_geometry_and_K_verification"
+  }
+}

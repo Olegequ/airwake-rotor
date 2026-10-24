@@ -1,0 +1,37 @@
+{
+  "schema_version": "normalized-modal-sensitivity-v1",
+  "analysis_window_s": [1.0, 11.0],
+  "reference_length_m": 13.716,
+  "primary_estimator": "leave_one_out",
+  "interaction_epsilon": 1e-15,
+  "response_metrics": {
+    "lift_N": {
+      "unit": "N",
+      "normalization_strategy": "mean_case_abs_mean",
+      "interpretation": "dynamic lift response normalized by the mean-flow-case mean lift"
+    },
+    "engine_power_W": {
+      "unit": "W",
+      "normalization_strategy": "mean_case_abs_mean",
+      "interpretation": "dynamic engine-power response normalized by the mean-flow-case mean power"
+    },
+    "roll_deg": {
+      "unit": "deg",
+      "normalization_strategy": "constant",
+      "normalization_value": 12.0,
+      "interpretation": "limit-normalized roll response; not a universal aircraft sensitivity scale"
+    },
+    "pitch_deg": {
+      "unit": "deg",
+      "normalization_strategy": "constant",
+      "normalization_value": 12.0,
+      "interpretation": "limit-normalized pitch response; not a universal aircraft sensitivity scale"
+    },
+    "heave_m": {
+      "unit": "m",
+      "normalization_strategy": "constant",
+      "normalization_value": 1.0,
+      "interpretation": "limit-normalized heave response; not a universal aircraft sensitivity scale"
+    }
+  }
+}

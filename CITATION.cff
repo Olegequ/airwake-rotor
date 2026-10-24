@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, credit Olegequ and cite the RVMD method where applicable."
+title: "airwake-rotor: Airwake modal decomposition and nonlinear rotorcraft response"
+authors:
+  - family-names: "Olegequ"
+version: 0.1.0
+license: MIT
+type: software
+repository-code: "https://github.com/Olegequ/airwake-rotor"

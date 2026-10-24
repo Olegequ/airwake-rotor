@@ -1,0 +1,16 @@
+{
+  "schema_version": "nato-gd-dmd-coupling-v1",
+  "base_study_config": "config/nato_gd_rvmd_3d.json",
+  "output_dir": "runs/dmd",
+  "decomposition": {
+    "method": "DMD",
+    "artifact_subdirectory": "02_dmd",
+    "mode_count": 78,
+    "real_quadrature_component_count": 155,
+    "mode_order": "ascending temporal-coefficient PSD-centroid frequency",
+    "full_space_energy_target": 0.998,
+    "group_selection_semantics": "one real eigenmode or one complex-conjugate pair; all real quadratures in a group are retained or deleted jointly",
+    "comparison_contract": "reuse the same seven rotors, mean-flow hover trim, dynamic inflow, nonlinear blade-element model, hover-hold controller, common 1-11 s analysis window, integration settings, and original-CFD baseline as the RVMD study",
+    "mode_count_status": "example_only; regenerate and audit your own DMD artifact"
+  }
+}
